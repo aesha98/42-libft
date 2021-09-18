@@ -5,8 +5,8 @@ char *ft_strtrim(char const *s1, char const *set);
 
 int main(void)
 {
-	char str[] = "Heello WorldeH";
-	char set[] = "He";
+	char str[] = "acbcbasomeabcthingba";
+	char set[] = "abc";
 	char *trim;
 
 	trim = ft_strtrim(str, set);
