@@ -10,14 +10,16 @@ static	size_t	ft_strlen(char const *s)
 	return (i);
 }
 
-static size_t	split_len(char const *s, char c)
+static int	wordlen(char *s, char c)
 {
-	size_t delmtr;
-	size_t total_splitlen;
+	int	 letter;
+	int	 total_splitlen;
 	
 	delmtr = 0;
-	while (*(s++) == c)
-		delmtr++;
+	while (*s)
+	{
+
+	}
 	total_splitlen = ft_strlen(s) * (delmtr);
 	return (total_splitlen);
 }
@@ -25,17 +27,18 @@ static size_t	split_len(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t i;
-
-	*split = (char **)malloc(sizeof(char) * (split_len(s, c) + 1));
-	if (*split == NULL)
+	int		 i;
+	int len;
+	
+	if (!s)
+		return (NULL);
+	len = wordlen((char*)s,c);
+	split = (char **)malloc(sizeof(char) * (len + 1));
+	if (!split)
 		return (NULL);
 	i = 0;
 	while (*s)
-	{
 		*(*split + i) = ft_st
-	}
-	
 	*(*split + i) = NULL;
 	return (split);
 }
