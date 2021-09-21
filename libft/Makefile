@@ -35,11 +35,23 @@ SRCS 	= ft_atoi.c\
 				ft_putendl_fd.c\
 				ft_putnbr_fd.c
 					
-OBJS 	= ${SRCS:.c=.o} 
+OBJS 	= ${SRCS:.c=.o}
+
+BONUS	= ft_lstnew.c\
+		  ft_lstadd_front.c\
+		  ft_lstsize.c\
+		  ft_lstlast.c\
+		  ft_lstadd_back.c\
+		  ft_lstdelone.c\
+		  ft_lstclear.c\
+		  ft_lstiter.c\
+		  ft_lstmap.c
+
+BONUSOBJT = ${BONUS: .c=.o}
 HEADER 	= includes
 LIBR 	= ranlib
 LIBC 	= ar -rc
-RM 		= rm -f
+REMOVE	= rm -f
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${HEADER}
@@ -48,16 +60,18 @@ ${NAME}: ${OBJS}
 		 ${LIBC} ${NAME} ${OBJS}
 		 ${LIBR} ${NAME}
 
-bonus: ${OBJS}
+bonus: ${BONUSOBJT}
+	   ${LIBC} ${NAME} ${BONUSOBJT}
+	   ${LIBR} ${NAME}
 
 all:${NAME}
 
 clean :
-		${RM} ${OBJS}
+		${REMOVE} ${OBJS} ${BONUSOBJT}
 
 fclean :clean
-		${RM} ${NAME}
+		${REMOVE} ${NAME}
 
 re:fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
