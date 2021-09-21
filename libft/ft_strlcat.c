@@ -25,7 +25,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
         }
         len++;
     }
-    *(dst) != '\0';
+    dst[index] = '\0';
     /*get src length */
     while (*src != '0')
     {

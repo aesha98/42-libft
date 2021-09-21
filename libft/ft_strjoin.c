@@ -1,17 +1,17 @@
 #include "libft.h"
 #include <string.h>
 
-static size_t ft_strlen(char const *str)
-{
-	size_t i;
+//static size_t ft_strlen(char const *str)
+//{
+	//size_t i;
 
-	i = 0;
-	while (*(str++))
-	{
-		i++;
-	}
-	return (i);
-}
+	//i = 0;
+	//while (*(str++))
+	//{
+		//i++;
+	//}
+	//return (i);
+//}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
