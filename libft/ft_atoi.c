@@ -3,11 +3,11 @@
 int	ft_atoi(const char *str)
 {
 	int	result;
-	int		sign;
+	int	sign;
 
 	sign = 1;
 	result = 0;
-	while (ft_isprint(*str))
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		++str;
 	if (*str == '+' || *str == '-')
 	{
@@ -16,8 +16,8 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(*str))
 	{
-		result *= 10;
-		result += *(str++ - '0');
+		result = result * 10;
+		result += (*str++ - '0');
 	}
-	return (result * sign);
+	return (sign * result);
 }
