@@ -1,28 +1,13 @@
-#include <stdlib.h>
-
-static size_t ft_strlen(const char *str)
-{
-	size_t i;
-
-	i = -1;
-	while (*str++)
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (little[i] == '\0')
-	{
 		return ((char *)big);
-	}
 	while (big[i] && i < len)
 	{
 		j = 0;

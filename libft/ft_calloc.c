@@ -1,28 +1,12 @@
-#include <stdlib.h>
-
-static void	*ft_memset(void *block, int c, size_t size)
-{
-	unsigned char *head;
-	head = block;
-	while (size-- > 0)
-	{
-		*head++ = (unsigned char)c;
-	}
-	return (block);
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t n, size_t size)
 {
-	int	 *ptr;
+	void	*ptr;
 
 	ptr = malloc(n * size);
-	if (ptr != NULL)
-	{
-		ft_memset(ptr, 0, size);	
-	}
-	else
-	{
+	if (ptr == NULL)
 		return (NULL);
-	}
+	ft_memset(ptr, 0, n);
 	return (ptr);
 }

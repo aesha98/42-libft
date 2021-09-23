@@ -1,30 +1,16 @@
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t ft_strlen(const char *src)
+char	*ft_strdup(const char *str)
 {
-    size_t i;
+	char	*word_dup;
+	char	*cpy;
 
-    i = 0;
-    while (*src)
-    {
-        i++;   
-    }
-     return (i);  
-}
-
-char *ft_strdup(const char *str)
-{
-    char *word_dup;
-    char *cpy;
-
-    word_dup = (char *)malloc(ft_strlen(str) + 1);
-    if (word_dup == NULL)
-        return (NULL);
-    cpy = word_dup;
-    while (*str)
-    {
-        *word_dup++ = *(char *)str++;
-    }
-    *word_dup = '\0';
-    return (cpy);
+	word_dup = (char *)malloc(ft_strlen(str) + 1);
+	if (word_dup == NULL)
+		return (NULL);
+	cpy = word_dup;
+	while (*str)
+		*word_dup++ = *(char *)str++;
+	*word_dup = '\0';
+	return (cpy);
 }

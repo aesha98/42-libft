@@ -1,17 +1,14 @@
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-    const char *last;
+	const char	*last;
 
-    last = 0;
-    while (*str++)
-    {
-        if (*str == c)
-        {
-           last = (char *)str;
-        }
-         
-    }
-    return ((char *)last);
+	last = 0;
+	while (*str++)
+	{
+		if (*str == c)
+			last = (char *)str;
+	}
+	return ((char *)last);
 }

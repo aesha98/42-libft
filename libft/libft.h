@@ -2,6 +2,7 @@
 # define LIBFT_H
 
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct	s_list
 {
@@ -17,7 +18,7 @@ int ft_isalpha(int c);
 int ft_isascii(int c);
 int ft_isdigit(int nb);
 int ft_toupper(int c);
-int ft_islower(int ch);
+int ft_tolower(int ch);
 int	ft_isprint(int c);
 void	*ft_memchr(const void *buffer, int ch, size_t n);
 int	ft_memcmp(const void *b1, const void *b2, size_t size);

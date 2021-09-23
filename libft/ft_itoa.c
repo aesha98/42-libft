@@ -1,9 +1,9 @@
-#include <stdlib.h>
+#include "libft.h"
 
-static int get_len(int n)
+static int	get_len(int n)
 {
-	int i;
-	int remainder;
+	int	i;
+	int	remainder;
 
 	i = 0;
 	remainder = 10;
@@ -16,18 +16,20 @@ static int get_len(int n)
 	}
 	return (i);
 }
-int absolute_val(int n)
+
+int	absolute_val(int n)
 {
-	if(n < 0)
+	if (n < 0)
 		return (-n);
 	return (n);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		base_ten;
 	int		i;
-	int 	len;
+	int		len;
 
 	base_ten = 10;
 	len = get_len(n);

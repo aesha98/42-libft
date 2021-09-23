@@ -2,20 +2,19 @@
 
 static unsigned int	ft_strlen(char const *s)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (*(s++))
 		i++;
 	return (i);
-
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int 	len;
-	unsigned int 	pos;
-	char *str;
+	unsigned int	len;
+	unsigned int	pos;
+	char			*str;
 
 	len = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * len + 1);

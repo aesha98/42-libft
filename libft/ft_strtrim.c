@@ -1,19 +1,8 @@
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t ft_strlen(char const *src)
+static int	ignore_set(char c, char const *set)
 {
-	size_t i;
-
-	i = 0;
-	while (*(src++))
-	{
-		i++;
-	}
-	return (i);
-}
-static int ignore_set(char c, char const *set)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -22,25 +11,22 @@ static int ignore_set(char c, char const *set)
 			return (c);
 		i++;
 	}
-	
 	return (0);
 }
 
-static int get_first_position(char const *s1, char const *set)
+static int	get_first_position(char const *s1, char const *set)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (ignore_set(s1[i], set))
-	{
 		i++;
-	}
 	return (i);
 }
 
-static int get_last_pos(char const *s1, char const *set)
+static int	get_last_pos(char const *s1, char const *set)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s1) - 1;
 	while (ignore_set(s1[i], set))
@@ -50,19 +36,19 @@ static int get_last_pos(char const *s1, char const *set)
 	return (i);
 }
 
-static int str_trim_len(char const *s1, char const *set)
+static int	str_trim_len(char const *s1, char const *set)
 {
-	return (get_last_pos(s1, set) - get_first_position(s1, set)); 
+	return (get_last_pos(s1, set) - get_first_position(s1, set));
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char 	*str;
-	int 	len;
-	int 	i;
-	int 	trim_head;
-   
-	len	= str_trim_len(s1, set) + 1;
+	char	*str;
+	int		len;
+	int		i;
+	int		trim_head;
+
+	len = str_trim_len(s1, set) + 1;
 	str = (char *)malloc(len);
 	if (str == NULL)
 		return (NULL);
