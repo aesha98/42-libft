@@ -8,17 +8,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (ft_strlen(s) < len)
 		len = ft_strlen(s);
-	size = len - start;
-	substr = (char *)malloc(size + 1);
+	size = len;
+	substr = malloc(sizeof(char) * (size + 1));
 	if (substr == NULL)
 		return (NULL);
-	i = start;
-	while ((*(s + i)) && (i < len))
+	if (start > ft_strlen(s))
 	{
-		*substr = *(s + i);
-		substr++;
+		*substr = '\0';
+		return (substr);
+	}
+	i = 0;
+	while (i < len)
+	{
+		*(substr + i) = (*(s + start + i));
 		i++;
 	}
-	*substr = '\0';
-	return (substr - size);
+	*(substr + i) = '\0';
+	return (substr);
 }

@@ -47,9 +47,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	int		i;
 	int		trim_head;
-
+	
 	len = str_trim_len(s1, set) + 1;
-	str = (char *)malloc(len);
+	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

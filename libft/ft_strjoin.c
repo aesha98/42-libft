@@ -9,7 +9,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	con_str = (char *)malloc(len + 1);
 	if (con_str == NULL)
 		return (NULL);
-	ft_strlcpy(con_str, s1, len);
+	ft_strlcpy(con_str, s1, len + 1);
 	ft_strlcat(con_str, s2, (len + 1));
 	return (con_str);
 }

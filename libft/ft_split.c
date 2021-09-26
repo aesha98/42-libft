@@ -1,44 +1,48 @@
-#include <stdlib.h>
+#include "libft.h"
 
-static	size_t	ft_strlen(char const *s)
+static size_t	wordlen(char const *s, char c)
 {
-	size_t i;
+	size_t	index;
 
-	i = 0;
-	while (*(s++))
-		i++;
-	return (i);
-}
-
-static int	wordlen(char *s, char c)
-{
-	int	 letter;
-	int	 total_splitlen;
-	
-	delmtr = 0;
+	index = 0;
 	while (*s)
 	{
-
+		if (*s != c)
+		{
+			index++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
 	}
-	total_splitlen = ft_strlen(s) * (delmtr);
-	return (total_splitlen);
+	return (index);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		 i;
-	int len;
-	
+	char	**split_string;
+	size_t	i;
+	size_t	sub_len;
+
+	i = 0;
 	if (!s)
 		return (NULL);
-	len = wordlen((char*)s,c);
-	split = (char **)malloc(sizeof(char) * (len + 1));
-	if (!split)
+	split_string = malloc(sizeof(char *) * wordlen(s, c) + 1);
+	if (!split_string)
 		return (NULL);
-	i = 0;
 	while (*s)
-		*(*split + i) = ft_st
-	*(*split + i) = NULL;
-	return (split);
+	{
+		if (*s != c)
+		{
+			sub_len = 0;
+			while ((*s && *s != c) && sub_len++)
+				s++;
+			split_string[i++] = ft_substr(s - sub_len, 0, sub_len);
+		}
+		else
+			s++;
+	}
+	split_string[i] = 0;
+	return (split_string);
 }
