@@ -8,11 +8,11 @@ static size_t	wordlen(char const *s, char c)
 	while (*s)
 	{
 		index++;
-		while (*s && *s != c)
+		while (*s && *s == c)
 			s++;
 		if (*s == '\0')
 			index--;
-		while (*s && *s == c)
+		while (*s && *s != c)
 			s++;
 	}
 	return (index);
@@ -46,10 +46,8 @@ static char	**fill_string(char **store, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split_string;
-	size_t	i;
 	size_t	len_words;
 
-	i = 0;
 	if (!s)
 		return (NULL);
 	len_words = wordlen(s, c);
