@@ -7,42 +7,55 @@ static size_t	wordlen(char const *s, char c)
 	index = 0;
 	while (*s)
 	{
+		index++;
+		while (*s && *s != c)
+			s++;
+		if (*s == '\0')
+			index--;
+		while (*s && *s == c)
+			s++;
+	}
+	return (index);
+}
+
+static char	**fill_string(char **store, char const *s, char c)
+{
+	size_t	len;
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
 		if (*s != c)
 		{
-			index++;
+			len = 0;
 			while (*s && *s != c)
+			{
+				len++;
 				s++;
+			}
+			store[i++] = ft_substr(s - len, 0, len);
 		}
 		else
 			s++;
 	}
-	return (index);
+	store[i] = 0;
+	return (store);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**split_string;
 	size_t	i;
-	size_t	sub_len;
+	size_t	len_words;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	split_string = malloc(sizeof(char *) * wordlen(s, c) + 1);
+	len_words = wordlen(s, c);
+	split_string = malloc(sizeof(char *) * (len_words + 1));
 	if (!split_string)
 		return (NULL);
-	while (*s)
-	{
-		if (*s != c)
-		{
-			sub_len = 0;
-			while ((*s && *s != c) && sub_len++)
-				s++;
-			split_string[i++] = ft_substr(s - sub_len, 0, sub_len);
-		}
-		else
-			s++;
-	}
-	split_string[i] = 0;
+	split_string = fill_string(split_string, s, c);
 	return (split_string);
 }
