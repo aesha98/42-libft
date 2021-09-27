@@ -25,6 +25,7 @@ SRCS =	ft_atoi.c\
 			ft_strlcpy.c\
 			ft_strlcat.c\
 			ft_substr.c\
+			ft_split.c\
 			ft_strjoin.c\
 			ft_strtrim.c\
 			ft_itoa.c\
@@ -44,7 +45,8 @@ BONUS	= ft_lstnew.c\
 		  ft_lstadd_back.c\
 		  ft_lstdelone.c\
 		  ft_lstclear.c\
-		  ft_lstiter.c
+		  ft_lstiter.c\
+		  ft_lstmap.c
 		  
 
 BONUSOBJT = ${BONUS:.c=.o}
@@ -56,13 +58,13 @@ REMOVE	= rm -f
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${HEADER}
 
-${NAME}: ${OBJS}
+$(NAME): ${OBJS}
 		 ${LIBC} ${NAME} ${OBJS}
 
 bonus: ${BONUSOBJT}
 	   ${LIBC} ${NAME} ${BONUSOBJT}
 
-all:${NAME}
+all:$(NAME)
 
 clean :
 		${REMOVE} ${OBJS} ${BONUSOBJT}
@@ -72,4 +74,4 @@ fclean :clean
 
 re:fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re bonus

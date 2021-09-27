@@ -2,17 +2,13 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	if (*str == ch)
+	if ((unsigned char)ch == 0)
+		return ((char *)(str + ft_strlen(str)));
+	while (*str)
 	{
-		return ((char *)str);
-	}
-	else
-	{
-		while (*str++)
-		{
-			if (*str == ch)
-				return ((char *)str);
-		}
+		if (*str == (unsigned char)ch)
+			return ((char *)str);
+		str++;
 	}
 	return (0);
 }

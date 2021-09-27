@@ -47,19 +47,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	int		i;
 	int		trim_head;
-	
+
+	if (!s1 || !set)
+		return (0);
 	len = str_trim_len(s1, set) + 1;
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	trim_head = get_first_position(s1, set);
-	while (i < len)
+	if (len > 0)
 	{
-		str[i] = s1[trim_head];
-		i++;
-		trim_head++;
+		str = malloc(sizeof(char) * len);
+		if (str == NULL)
+			return (NULL);
+		i = 0;
+		trim_head = get_first_position(s1, set);
+		while (i < len)
+			str[i++] = s1[trim_head++];
+		str[i] = '\0';
+		return (str);
 	}
-	str[i] = '\0';
+	str = malloc(sizeof(char) * 1);
+	str[0] = '\0';
 	return (str);
 }
