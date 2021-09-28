@@ -1,5 +1,5 @@
 # 42-libft
-This is a standard library function in C that we have to remake as our own as part of the project syllabus (libft) in 42kl-core-programme. 
+This project is your very first project as a student at 42. You will need to recode a few functions of the C standard library as well as some other utility functions that you will use during your whole cursus.
 
 # LIBFT
 **Makefile**\
