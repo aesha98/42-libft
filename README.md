@@ -3,10 +3,10 @@ This is a standard library function in C that we have to remake as our own as pa
 
 # LIBFT
 42-cursus project\
+\
 **Makefile**\
 \
 **libft.h**\
-\
 **Part I :**\
 • ft_isalpha\
 • ft_isdigit\
