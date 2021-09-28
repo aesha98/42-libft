@@ -7,6 +7,7 @@ This is a standard library function in C that we have to remake as our own as pa
 **Makefile**\
 \
 **libft.h**\
+\
 **Part I :**\
 • ft_isalpha\
 • ft_isdigit\
