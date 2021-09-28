@@ -50,19 +50,15 @@ BONUS	= ft_lstnew.c\
 		  
 
 BONUSOBJT = ${BONUS:.c=.o}
-HEADER 	= includes
 LIBR 	= ranlib
 LIBC 	= ar rc
 REMOVE	= rm -f
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${HEADER}
-
 $(NAME): ${OBJS}
-		 ${LIBC} ${NAME} ${OBJS}
+		 ${LIBC} $(NAME) ${OBJS}
 
 bonus: ${BONUSOBJT}
-	   ${LIBC} ${NAME} ${BONUSOBJT}
+	   ${LIBC} $(NAME) ${BONUSOBJT}
 
 all:$(NAME)
 
@@ -70,8 +66,8 @@ clean :
 		${REMOVE} ${OBJS} ${BONUSOBJT}
 
 fclean :clean
-		${REMOVE} ${NAME}
+		${REMOVE} $(NAME)
 
 re:fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
