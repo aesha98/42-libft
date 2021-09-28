@@ -43,7 +43,16 @@ Part II :
 •ft_putendl_fd
 
 Bonus :
-
+• ft_lstnew
+• ft_lstadd_front
+• ft_lstsize
+• ft_lstlast
+• ft_lstadd_back
+• ft_lstadd_front
+• ft_lstdelone
+•ft_lstclear
+•ft_lstiter
+•ft_lstmap
 
 # EDUCATIONAL PURPOSES ONLY!
 If you are a cadet at 42, you can take a sneak peek, but no cheating, that is not the 42 way. 
