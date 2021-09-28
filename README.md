@@ -1,4 +1,4 @@
-# 42-core-libft
+# 42-libft
 This is a standard library function in C that we have to remake as our own as part of the project syllabus (libft) in 42kl-core-programme. 
 
 # LIBFT
