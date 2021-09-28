@@ -4,7 +4,7 @@ This is a standard library function in C that we have to remake as our own as pa
 # LIBFT
 42-cursus project
 
-Part I :
+Part I :\
 • ft_isalpha\
 • ft_isdigit\
 • ft_isalnum\
@@ -53,7 +53,7 @@ Bonus :\
 •ft_lstclear\
 •ft_lstiter\
 •ft_lstmap\
-\
+
 # EDUCATIONAL PURPOSES ONLY!
 If you are a cadet at 42, you can take a sneak peek, but no cheating, that is not the 42 way. 
 
